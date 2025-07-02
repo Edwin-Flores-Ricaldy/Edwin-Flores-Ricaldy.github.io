@@ -1,0 +1,414 @@
+/* MENU ENLACES */
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #bdfbff 80%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*esto lo forma en recta y no de arriba hacia abajo */
+.glass-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+/*esto da el asécto de mayusculas y negrlla a las letras */
+.glass-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 25px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/*aun nose */
+.glass-menu li a:hover {
+    color: #c50909;
+}
+/*esto crea la animacion de linias azul debajo de las letras */
+.glass-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #4a6cf7;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+/*esto crea la animacion de linias azul debajo de las letras cuando pasas el mouse*/
+.glass-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Efecto de distorsión para el texto (opcional) */
+.distorted-text {
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    text-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+/* Permite posicionamiento libre del menú */
+.glass-menu {
+    position: absolute; /* Posicionamiento libre */
+    top: 45px;         /* Distancia desde arriba */
+    left: 500px;       /* Distancia desde la izquierda */
+    z-index: 1000;     /* Asegura que esté por encima de otros elementos */
+}
+/* IMAGENES */
+/* Estilos para imágenes libres */
+.libre-img {
+    position: absolute;
+    z-index: 500;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+.libre-img:hover {
+    transform: scale(1.1); /* Efecto zoom limpio */
+}
+
+/* Posicionamiento individual */
+.img-1 {
+    top: -90px;
+    left: 80px;
+    width: 350px;
+}
+
+.img-2 {
+    top: 120px;
+    left: 850px;
+    width: 600px; /* Ajusta según necesidad */
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1)); /* Sutil sombra para profundidad */
+}
+
+/* TITULO ANIMADO */
+
+a {
+    font-size: 5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: transparent;
+    background: url("https://wweb.dev/resources/creative-hover-effects/wave.svg") repeat-x #f52525;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% 100%;
+    background-position-x: 0;
+    background-position-y: 0; /* Cambiado de 2em a 0 para que siempre sea visible */
+    -webkit-transition: background-position-y 0.6s ease;
+    transition: background-position-y 0.6s ease;
+    -webkit-animation: waveAnimation 4s infinite linear;
+    animation: waveAnimation 4s infinite linear;
+    /* Eliminado animation-play-state: paused */
+}
+
+@keyframes waveAnimation {
+    from {
+    background-position-x: 0%;
+    }
+    to {
+    background-position-x: 200%;
+    }
+}
+.titulo-animado {
+    position: absolute; /* Permite moverlo libremente */
+    top: 300px;         /* Distancia desde arriba */
+    left: 25%;         /* Centrado horizontal (ajusta con transform) */
+    transform: translateX(-50%); /* Ajuste fino para centrar */
+    z-index: 100;      /* Controla qué elemento va encima/abajo */
+    font-size: 80px;
+}
+
+/* LETRAS DE MENSAJE */
+/* Estilo base para ambos textos */
+.texto-personalizado {
+    position: absolute;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    z-index: 100;
+    cursor: default;
+    text-transform: none; /* Mantiene minúsculas */
+}
+
+/* Primer texto - Estilo rojo */
+#letra1{
+    color: #ff0000; /* Rojo sólido */
+    font-size: 2.2rem;
+    top: 35%;
+    left: 5.5%;
+    background: linear-gradient(to right, #000000, #cc0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Segundo texto - Estilo azul */
+#letra2{
+    color: #0066ff; /* Azul sólido */
+    font-size: 1.8rem;
+    top: 54%;
+    right: 61%;
+    background: linear-gradient(to right, #000000, #0066cc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Efecto hover sutil */
+.texto-personalizado:hover {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    transition: text-shadow 0.3s ease;
+}
+
+
+
+
+/* ICONOS */
+
+/* CONTENEDOR PRINCIPAL PARA POSICIONAR LOS ICONOS */
+.icons-wrapper {
+    position: fixed; /* o 'absolute' según necesites */
+    bottom: 100px; /* Ajusta la posición de arriba hacia abajo */
+    right: 1300px; /* Ajusta la posición de isquierda a derecha */
+    z-index: 1000; /* Asegura que estén por encima de otros elementos */
+}
+
+/* ICONOS - MANTENIENDO TU DISEÑO ORIGINAL */
+.container {
+    display: flex;
+    gap: 30px; /* Reducido el espacio entre iconos para mejor ajuste */
+}
+
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Tamaño reducido del botón */
+    height: 60px; /* Tamaño reducido del botón */
+    border-radius: 50%;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    font-size: 1.8em; /* Tamaño del icono reducido proporcionalmente */
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5),
+                inset 0 0 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+/* EL RESTO DE TU CSS PERMANECE EXACTAMENTE IGUAL */
+.icon-btn::before,
+.icon-btn::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    filter: blur(10px);
+}
+
+.icon-btn::before {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    box-shadow: 0 0 20px, 0 0 40px, 0 0 60px;
+}
+
+.icon-btn::after {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    box-shadow: 0 0 30px, 0 0 70px, 0 0 100px;
+}
+
+#facebook-icon {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5),
+                inset 0 0 10px rgba(255, 255, 255, 0.1),
+                0 0 5px #007bff;
+}
+
+#facebook-icon .fa-facebook-f {
+    text-shadow: 0 0 8px #007bff, 0 0 15px #007bff, 0 0 25px #007bff;
+}
+
+#facebook-icon::before {
+    box-shadow: 0 0 20px #007bff, 0 0 40px #007bff, 0 0 60px #007bff;
+}
+
+#facebook-icon::after {
+    box-shadow: 0 0 30px #007bff, 0 0 70px #007bff, 0 0 100px #007bff;
+}
+
+#whatsapp-icon {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5),
+                inset 0 0 10px rgba(255, 255, 255, 0.1),
+                0 0 5px #25d366;
+}
+
+#whatsapp-icon .fa-whatsapp {
+    text-shadow: 0 0 8px #25d366, 0 0 15px #25d366, 0 0 25px #25d366;
+}
+
+#whatsapp-icon::before {
+    box-shadow: 0 0 20px #25d366, 0 0 40px #25d366, 0 0 60px #25d366;
+}
+
+#whatsapp-icon::after {
+    box-shadow: 0 0 30px #25d366, 0 0 70px #25d366, 0 0 100px #25d366;
+}
+
+.icon-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8),
+                inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.icon-btn:hover::before,
+.icon-btn:hover::after {
+    opacity: 1;
+}
+
+/* CUBOS ANIMADOS */
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(50, 92, 199, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
