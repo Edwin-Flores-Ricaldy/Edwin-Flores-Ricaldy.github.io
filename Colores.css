@@ -1,0 +1,149 @@
+body {
+  overflow-x: hidden;
+  font-family: Sans-Serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  background: #ff0000;
+  color: white;
+}
+
+/* Estilos para la imagen (ajustado a 5x5) */
+.header-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.header-img {
+  width: 5cm;       
+  height: 5cm;     
+  display: block;
+  margin: 0 auto;   /* Centra la imagen */
+}
+
+/* Estilos del menú */
+.menu-container a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.menu-container a:hover {
+  color: #000000;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para desktop */
+@media only screen and (min-width: 768px) {
+  .menu {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+  }
+
+  .menu ul {
+    display: flex;
+  }
+
+  .menu li {
+    padding: 0 20px;
+  }
+}
+
+/* [Tus estilos anteriores del menú...] */
+
+/* Sección de productos mejorada */
+.productos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px 5%;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: #f9f9f9;
+}
+
+.producto {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.img-container {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background: #fff;
+}
+
+.producto img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Cambiado de 'cover' a 'contain' para ver imágenes completas */
+  width: auto;
+  height: auto;
+}
+
+.producto-info {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  flex-grow: 1;
+}
+
+.producto-info h3 {
+  color: #d40000;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.producto-info p {
+  color: #555;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.precio {
+  font-weight: bold;
+  color: #d40000;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .productos-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  
+  .img-container {
+    height: 180px;
+    padding: 10px;
+  }
+}
